@@ -1,0 +1,10 @@
+<h1>Add New Feedback</h1>
+<form action="/feedbacks" method="POST">
+  <select name="feedback[customerId]">
+    <% customers.forEach(customer => { %>
+      <option value="<%= customer._id %>"><%= customer.name %></option>
+    <% }) %>
+  </select>
+  <textarea name="feedback[feedbackText]" placeholder="Feedback"></textarea>
+  <button type="submit">Submit Feedback</button>
+</form>

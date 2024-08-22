@@ -1,0 +1,12 @@
+<h1>Feedback List</h1>
+<a href="/feedbacks/new">Add New Feedback</a>
+<ul>
+  <% feedbacks.forEach(feedback => { %>
+    <li>
+      <strong><%= feedback.customerId.name %>:</strong> <%= feedback.feedbackText %>
+      <form action="/feedbacks/<%= feedback._id %>?_method=DELETE" method="POST">
+          <button>Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
